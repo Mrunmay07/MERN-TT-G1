@@ -1,0 +1,28 @@
+/* element selector */
+
+/* class selectors */
+.para{
+    background-color: aqua;
+}
+
+/* id selectors */
+#para-2{
+    background-color: red;
+}
+
+/* attributes selectors */
+[data-name="akash"]{
+    background-color: coral;
+}
+
+/* Grouping selectors */
+h1 , h2 , h3 {
+    background-color: green;
+}
+
+/* Decendant selectors */
+
+/* Direct child selectors */
+.parent > p{
+    color: chartreuse;
+}

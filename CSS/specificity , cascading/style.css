@@ -1,0 +1,30 @@
+
+h1{
+    background-color: coral;
+}
+
+#head-1{
+    background-color: purple;
+}
+
+#head-1{
+    background-color: skyblue !important;
+}
+
+.head{
+    background-color: blue;
+}
+
+h1{
+    background-color: yellow !important;
+}
+
+h1{
+    background-color: green;
+}
+
+/* Universal Selectors */
+/* Pseudo selectors */
+
+
+

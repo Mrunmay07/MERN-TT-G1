@@ -1,0 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Momo+Signature&family=Oswald:wght@200..700&family=Preahvihear&display=swap');
+
+
+
+h1{
+    font-size: 50px;
+    letter-spacing: 40px;
+    text-align:center;   
+}
+
+p{
+    /* word-spacing: 50px; */
+    line-height:20px;
+    font-family:'Momo Signature';
+}
+
+.container{
+   /*  background-color: coral; */
+    width: 800px;
+    height: 500px;
+    background-image: url('https://cdnb.artstation.com/p/assets/images/images/081/846/541/large/guillaume-vieugue-hollowknight-silksong-guillaumevieugue-reframe.jpg?1731401979');
+
+    background-position: center;
+    background-size: cover;
+}

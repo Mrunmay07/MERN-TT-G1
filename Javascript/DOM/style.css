@@ -1,0 +1,17 @@
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+    font-size: 2rem;
+}
+
+.active{
+    background-color: green;
+    color: white;
+}
+
+.container{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
