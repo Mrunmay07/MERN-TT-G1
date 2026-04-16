@@ -1,6 +1,17 @@
+import { useLoaderData } from "react-router-dom"
+import Card from "../components/ui/Card"
+
 function Movies(){
+    const moviesData = useLoaderData()
+    console.log(moviesData)
     return(
-        <h1>Movies Page</h1>
+      <ul>
+        {
+            moviesData.Search.map((currMovies) => {
+                return <Card/>
+            })
+        }
+      </ul>
     )
 }
 

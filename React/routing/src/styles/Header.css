@@ -17,8 +17,11 @@
 }
 
 
-
 .nav-links li a{
     text-decoration: none;
     color: white;
+}
+
+.nav-links li a.active{
+    color: orange;
 }
