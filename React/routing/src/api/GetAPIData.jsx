@@ -1,8 +1,12 @@
-async function getMoviesData(){
-    const res = await fetch('http://www.omdbapi.com/?apikey=a5e6060b&s=Batman')
-    const data = await res.json()
-    console.log(data)
-    return data
+async function getMoviesData() {
+  try {
+    const res = await fetch("http://www.omdbapi.com/?apikey=a5e6060b&s=Batman");
+    const data = await res.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error)
+  }
 }
 
-export default getMoviesData
+export default getMoviesData;
