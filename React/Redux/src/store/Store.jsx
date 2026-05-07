@@ -1,5 +1,5 @@
+import { composeWithDevTools } from '@redux-devtools/extension'
 import {createStore} from 'redux'
-
 
 
 // actions
@@ -7,9 +7,9 @@ const ADD_TASK = 'task/add'
 const DELETE_TASK = 'task/delete'
 
 
-const initialState = {
-    task:[]
-}
+    const initialState = {
+        task:[]
+    }
 
 function reducer(state = initialState , action){
     switch (action.type) {
@@ -27,13 +27,24 @@ function reducer(state = initialState , action){
 }
 
 // Creating a Global Store
-const store = createStore(reducer)
+export const store = createStore(reducer , composeWithDevTools())
 console.log(store)
 
-store.dispatch({type:ADD_TASK , payload:'CODING'})
+store.subscribe(() => {
+    console.log(store.getState())
+})
 
-console.log(store.getState())
+// action creators
+export function addTask(data){
+    return {type:ADD_TASK , payload:data}
+}
 
-store.dispatch({type:ADD_TASK , payload:'GAMING'})
+export function deleteTask(id){
+    return {type:DELETE_TASK , payload:id }
+}
 
-console.log(store.getState())
+store.dispatch(addTask('Coding'))
+store.dispatch(addTask('Gaming'))
+store.dispatch(addTask('Study'))
+store.dispatch(deleteTask(1))
+
