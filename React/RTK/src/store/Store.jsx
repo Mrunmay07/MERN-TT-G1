@@ -1,17 +1,9 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-
 const initialState = {
   task: [],
 };
 
-
-// Store
-const store = configureStore({
-    reducer:{
-        taskReducer:taskReducer.reducer
-    }
-})
 
 // Slices // utility function 
 const taskReducer = createSlice({
@@ -28,3 +20,19 @@ const taskReducer = createSlice({
         }
     }
 })
+console.log(taskReducer)
+export const {addTask , deleteTask}= taskReducer.actions
+console.log(addTask)
+
+// Store
+export const store = configureStore({
+    reducer:{
+        taskReducer:taskReducer.reducer
+    }
+})
+console.log(store)
+
+store.dispatch(addTask('Coding'))
+store.dispatch(addTask('Cooking'))
+store.dispatch(addTask('Sleeping'))
+store.dispatch(deleteTask(1))

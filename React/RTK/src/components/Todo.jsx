@@ -7,7 +7,9 @@ function Todo(){
 
     const [task , setTask] = useState('')
 
-    const todos = useSelector((state) => state.task) // Array ['Coding','Gaming' ,...]
+    const todos = useSelector((state) => state.taskReducer.task)
+    console.log(todos)
+    // Array ['Coding','Gaming' ,...]
 
     // useDispatch()
     const dispatch = useDispatch() // function 
