@@ -1,0 +1,27 @@
+{
+  "name": "understanding-package.json",
+  "version": "1.0.0",
+  "description": "Hello world kaise ho",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hello": "node index.js",
+    "list": "ls",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "restart": "ls",
+    "stop": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "1.16.1",
+    "express": "~4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "vite": "^8.0.14"
+  }
+}

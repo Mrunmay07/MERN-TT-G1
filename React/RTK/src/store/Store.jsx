@@ -20,6 +20,7 @@ const taskReducer = createSlice({
         }
     }
 })
+
 console.log(taskReducer)
 export const {addTask , deleteTask}= taskReducer.actions
 console.log(addTask)
