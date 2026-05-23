@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../styles/SignUp.css'
 
 function SignUp(){
    /*  const [firstName , setFirstName] = useState('')
@@ -49,8 +50,7 @@ function SignUp(){
             <label htmlFor="">Password</label>
             <input type="text" value={user.password}   name="password" onChange={handleChange}/>
 
-             <label htmlFor="">Age</label>
-            <input type="text" value={user.age}   name="password" onChange={handleChange}/>
+             
             <br />
             <button>SignUp</button>
         </form>
