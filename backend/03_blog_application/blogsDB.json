@@ -1,0 +1,20 @@
+[
+    {
+        "id":12345,
+        "title":"React.js",
+        "content":"JS library",
+        "author":"Akash"
+    },
+    {
+        "id":"56789",
+        "title":"Docker",
+        "content":"Contenerization",
+        "author":"Rohit"
+    },
+     {
+        "id":"912345",
+        "title":"Redis",
+        "content":"Caching database",
+        "author":"Anurag"
+    }
+]
