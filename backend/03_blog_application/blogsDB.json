@@ -1,20 +1,38 @@
 [
-    {
-        "id":12345,
-        "title":"React.js",
-        "content":"JS library",
-        "author":"Akash"
-    },
-    {
-        "id":"56789",
-        "title":"Docker",
-        "content":"Contenerization",
-        "author":"Rohit"
-    },
-     {
-        "id":"912345",
-        "title":"Redis",
-        "content":"Caching database",
-        "author":"Anurag"
-    }
+  {
+    "id": 12345,
+    "title": "React.js",
+    "content": "JS library",
+    "author": "Akash"
+  },
+  {
+    "id": "56789",
+    "title": "Docker",
+    "content": "Contenerization",
+    "author": "Rohit"
+  },
+  {
+    "id": "912345",
+    "title": "Redis",
+    "content": "Caching database",
+    "author": "Anurag"
+  },
+  {
+    "id": "7be11096-7253-4448-b9e5-ad393b0c7166",
+    "title": "Docker",
+    "content": "Contenraization ",
+    "author": "Akash",
+    "image": null,
+    "createdAt": "2026-08-24T05:26:32.744Z",
+    "updatedAt": "2026-08-24T05:26:32.745Z"
+  },
+  {
+    "id": "5b505468-0b7a-4501-b8d0-49f8a2ca7d3b",
+    "title": "Cloud Computing",
+    "content": "AWS , Azure , GCP",
+    "author": "Rohit",
+    "image": "/uploads/",
+    "createdAt": "2026-08-24T05:28:34.473Z",
+    "updatedAt": "2026-08-24T05:28:34.474Z"
+  }
 ]
