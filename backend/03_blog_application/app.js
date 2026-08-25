@@ -49,6 +49,8 @@ app.post("/blogs", upload.single("image") ,async (req, res) => {
     title,
     content,
     author,
+    like:0,
+    comment: [],
     image: req.file ? `/uploads/` : null,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -63,6 +65,32 @@ app.post("/blogs", upload.single("image") ,async (req, res) => {
     return res.status(401).json({message : err})
   }
 });
+
+
+// Blog UPdate -> PATCH
+app.patch("/blogs/:id" , async (req , res) => {
+    const {id} = req.params // id = 5b505468-0b7a-4501-b8d0-49f8a2ca7d3b
+    const blog = blogsData.find((blog) => blog.id === id )
+
+    if(!blog){
+      return res.status(404).json({message : "Blog not found"})
+    }
+
+    const {title , content , author} = req.body
+
+    if(title !== undefined) blog.title = title
+    if(content !== undefined) blog.content = content
+    if(author !== undefined ) blog.author = author
+
+    blog.updatedAt = new Date().toISOString()
+
+    try {
+      await writeFile("./blogsDB.json" ,  JSON.stringify(blogsData))
+      return res.status(201).json({message : "Blog updated"})
+    } catch (err) {
+      return res.json({message : "Blog failed to update"})
+    }
+})
 
 app.listen(7000, () => {
   console.log("Server started at http://localhost:7000/");

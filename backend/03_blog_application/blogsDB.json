@@ -34,5 +34,16 @@
     "image": "/uploads/",
     "createdAt": "2026-08-24T05:28:34.473Z",
     "updatedAt": "2026-08-24T05:28:34.474Z"
+  },
+  {
+    "id": "12a5f005-4cb4-4d91-8ba9-2ed7cb65c98a",
+    "title": "Redis",
+    "content": "Caching Database",
+    "author": "Pratham",
+    "like": 0,
+    "comment": [],
+    "image": null,
+    "createdAt": "2026-08-25T03:45:42.383Z",
+    "updatedAt": "2026-08-25T03:45:42.384Z"
   }
 ]
