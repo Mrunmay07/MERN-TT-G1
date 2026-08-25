@@ -27,21 +27,25 @@
     "updatedAt": "2026-08-24T05:26:32.745Z"
   },
   {
-    "id": "5b505468-0b7a-4501-b8d0-49f8a2ca7d3b",
-    "title": "Cloud Computing",
-    "content": "AWS , Azure , GCP",
-    "author": "Rohit",
-    "image": "/uploads/",
-    "createdAt": "2026-08-24T05:28:34.473Z",
-    "updatedAt": "2026-08-24T05:28:34.474Z"
-  },
-  {
     "id": "12a5f005-4cb4-4d91-8ba9-2ed7cb65c98a",
     "title": "Redis",
     "content": "Caching Database",
     "author": "Pratham",
-    "like": 0,
-    "comment": [],
+    "like": 2,
+    "comment": [
+      {
+        "id": "6797626c-2f68-435c-9926-6616f7cbc7e9",
+        "user": "Rohit",
+        "text": "Good Article",
+        "createdAt": "2026-08-25T04:35:54.800Z"
+      },
+      {
+        "id": "1896010f-341a-4533-9844-95c3ebfa7c28",
+        "user": "Anurag",
+        "text": "Acha article hai",
+        "createdAt": "2026-08-25T04:36:45.094Z"
+      }
+    ],
     "image": null,
     "createdAt": "2026-08-25T03:45:42.383Z",
     "updatedAt": "2026-08-25T03:45:42.384Z"

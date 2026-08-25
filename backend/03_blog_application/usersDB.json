@@ -1,0 +1,24 @@
+[
+  {
+    "id": "12344",
+    "username": "Anurag",
+    "email": "anurag@gmail.com",
+    "password": 12345
+  },
+  {
+    "id": "f0ba5ad9-2d2c-4bc2-bebc-afffdc78c397",
+    "username": "Shivam",
+    "email": "shivam@gmail.com",
+    "password": 12345,
+    "createdAt": "2026-08-25T05:11:49.218Z",
+    "updatedAt": "2026-08-25T05:11:49.219Z"
+  },
+  {
+    "id": "e668b815-3c0b-4522-8e08-77a2072a2584",
+    "username": "Raunak",
+    "email": "raunakgmail.com",
+    "password": 12345,
+    "createdAt": "2026-08-25T05:12:25.425Z",
+    "updatedAt": "2026-08-25T05:12:25.426Z"
+  }
+]
