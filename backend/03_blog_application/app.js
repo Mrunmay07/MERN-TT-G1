@@ -188,6 +188,19 @@ app.post("/users/register" , async (req , res) => {
 
 })
 
+// login
+app.post("/users/login" , (req , res) => {
+    const {email , password} = req.body
+
+    const user = usersData.find((user) => user.email === email && user.password === password)
+
+    if(!user){
+      return res.status(404).json({message : "Invalid credentials"})
+    }
+
+    return res.status(200).json({message : "User logged in"})
+})
+
 
 
 app.listen(7000, () => {
