@@ -1,53 +1,43 @@
 [
   {
-    "id": 12345,
-    "title": "React.js",
-    "content": "JS library",
-    "author": "Akash"
-  },
-  {
-    "id": "56789",
-    "title": "Docker",
-    "content": "Contenerization",
-    "author": "Rohit"
-  },
-  {
-    "id": "912345",
-    "title": "Redis",
-    "content": "Caching database",
-    "author": "Anurag"
-  },
-  {
-    "id": "7be11096-7253-4448-b9e5-ad393b0c7166",
-    "title": "Docker",
-    "content": "Contenraization ",
-    "author": "Akash",
-    "image": null,
-    "createdAt": "2026-08-24T05:26:32.744Z",
-    "updatedAt": "2026-08-24T05:26:32.745Z"
-  },
-  {
-    "id": "12a5f005-4cb4-4d91-8ba9-2ed7cb65c98a",
-    "title": "Redis",
-    "content": "Caching Database",
-    "author": "Pratham",
-    "like": 2,
+    "id": "2e730eb8-9649-4822-9d89-a4f7cfa26a78",
+    "userId": "5e7f863d-1475-4f43-a982-cfe6737f3599",
+    "title": "AI/ML",
+    "content": "machine learning",
+    "author": "Anshul",
+    "likes": [
+      {
+        "userId": "debc94c8-1111-4854-880b-4fba8400afa9"
+      }
+    ],
     "comment": [
       {
-        "id": "6797626c-2f68-435c-9926-6616f7cbc7e9",
-        "user": "Rohit",
-        "text": "Good Article",
-        "createdAt": "2026-08-25T04:35:54.800Z"
-      },
-      {
-        "id": "1896010f-341a-4533-9844-95c3ebfa7c28",
-        "user": "Anurag",
-        "text": "Acha article hai",
-        "createdAt": "2026-08-25T04:36:45.094Z"
+        "id": "e2929553-7a14-4f0d-b3ca-a6f6ef64fe9e",
+        "userId": "debc94c8-1111-4854-880b-4fba8400afa9",
+        "user": "Rakesh",
+        "text": "Good article bro",
+        "createdAt": "2026-08-31T04:55:17.384Z",
+        "updatedAt": "2026-08-31T04:55:17.385Z"
       }
     ],
     "image": null,
-    "createdAt": "2026-08-25T03:45:42.383Z",
-    "updatedAt": "2026-08-25T03:45:42.384Z"
+    "createdAt": "2026-08-31T04:52:02.738Z",
+    "updatedAt": "2026-08-31T04:52:02.738Z"
+  },
+  {
+    "id": "bbdafc42-9584-4c5c-8d95-222d9c4f8dd2",
+    "userId": "debc94c8-1111-4854-880b-4fba8400afa9",
+    "title": "Docker",
+    "content": "COntenerization",
+    "author": "Rakesh",
+    "likes": [
+      {
+        "userId": "debc94c8-1111-4854-880b-4fba8400afa9"
+      }
+    ],
+    "comment": [],
+    "image": null,
+    "createdAt": "2026-08-31T04:53:11.132Z",
+    "updatedAt": "2026-08-31T04:53:11.132Z"
   }
 ]

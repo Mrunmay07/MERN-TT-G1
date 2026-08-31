@@ -20,5 +20,21 @@
     "password": 12345,
     "createdAt": "2026-08-25T05:12:25.425Z",
     "updatedAt": "2026-08-25T05:12:25.426Z"
+  },
+  {
+    "id": "5e7f863d-1475-4f43-a982-cfe6737f3599",
+    "username": "Anshul",
+    "email": "anshul@gmail.com",
+    "password": 12345,
+    "createdAt": "2026-08-31T04:15:40.539Z",
+    "updatedAt": "2026-08-31T04:15:40.539Z"
+  },
+  {
+    "id": "debc94c8-1111-4854-880b-4fba8400afa9",
+    "username": "Rakesh",
+    "email": "rakesh@gmail.com",
+    "password": 12345,
+    "createdAt": "2026-08-31T04:29:42.295Z",
+    "updatedAt": "2026-08-31T04:29:42.296Z"
   }
 ]
