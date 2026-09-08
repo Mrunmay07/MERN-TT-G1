@@ -12,7 +12,7 @@ const db = client.db()
 const expenseCollection = db.collection("expenses")
 
 
-// Create/ insert
+// Create/ insertz
 /* 
 console.log( await expenseCollection.insertOne({title : "Hello" }))
 
