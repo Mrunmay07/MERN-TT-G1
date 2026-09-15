@@ -1,13 +1,13 @@
-import usersData from "../usersDB.json" with {type:"json"}
+import User from "../models/User.js"
 
-function authMiddleware(req , res , next){
+async function authMiddleware(req , res , next){
     const uid = req.cookies.uid
 
     if(!uid){
         res.json({message : "Please Login first"})
     }
 
-    const user = usersData.find((user) => user.id === uid )
+    const user = await User.findById(uid)
 
     if(!user){
         res.json({message : "Session Invalid"})

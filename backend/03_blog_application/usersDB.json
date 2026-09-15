@@ -36,5 +36,21 @@
     "password": 12345,
     "createdAt": "2026-08-31T04:29:42.295Z",
     "updatedAt": "2026-08-31T04:29:42.296Z"
+  },
+  {
+    "id": "df0c700d-bd42-4dc0-bb24-ba93dec38280",
+    "username": "Arpit",
+    "email": "arpit@gmail.com",
+    "password": "12345",
+    "createdAt": "2026-09-15T04:02:06.685Z",
+    "updatedAt": "2026-09-15T04:02:06.686Z"
+  },
+  {
+    "id": "5fed3819-e785-4547-9ffd-c7127417551f",
+    "username": "Rahul",
+    "email": "rahul@gmail.com",
+    "password": "12345",
+    "createdAt": "2026-09-15T04:08:52.571Z",
+    "updatedAt": "2026-09-15T04:08:52.572Z"
   }
 ]
