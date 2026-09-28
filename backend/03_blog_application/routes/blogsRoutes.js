@@ -79,34 +79,31 @@ router.post("/", authMiddleware, upload.single("image"), async (req, res) => {
 // Blog UPdate -> PATCH
 router.patch("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
-  const blog = blogsData.find(
-    (blog) => blog.id === id && blog.userId === req.user.id,
-  );
+  
+  const updatedBlog = await Blog.findOneAndUpdate(
+    {
+      _id : id,
+      userId : req.user._id
+    },
+    req.body ,
+    {
+      new : true,
+      runValidators : true
+    }
+  )
 
-  if (!blog) {
-    return res.status(404).json({ message: "Blog not found" });
+  if (!updatedBlog) {
+    return res.status(404).json({ message: "Blog not found or unauthorized" });
   }
 
-  const { title, content, author } = req.body;
-
-  if (title !== undefined) blog.title = title;
-  if (content !== undefined) blog.content = content;
-  if (author !== undefined) blog.author = author;
-
-  blog.updatedAt = new Date().toISOString();
-
-  try {
-    await writeFile("./blogsDB.json", JSON.stringify(blogsData, null, 2));
-    return res.status(201).json({ message: "Blog updated" });
-  } catch (err) {
-    return res.json({ message: "Blog failed to update" });
-  }
+  return res.status(200).json({message : "Blog updated successfully"})
+  
 });
 
 // Like
 router.post("/:id/likes", authMiddleware, async (req, res) => {
   const { id } = req.params;
-  const blog = blogsData.find((blog) => blog.id === id);
+  const blog = await Blog.findById(id)
 
   if (!blog) {
     return res.status(404).json({ message: "Blog not found" });
@@ -121,68 +118,60 @@ router.post("/:id/likes", authMiddleware, async (req, res) => {
   }
 
   blog.likes.push({
-    userId: req.user.id,
+    userId: req.user._id
   });
 
-  try {
-    await writeFile("./blogsDB.json", JSON.stringify(blogsData, null, 2));
-    return res
-      .status(201)
-      .json({ message: "Blog Liked", blogCount: blog.likes.length });
-  } catch (err) {
-    return res.status(401).json({ message: "Failed to Like on a blog" });
-  }
+  return res.status(200).json({message : "Blog liked"})
 });
 
 // Comment
 router.post("/:id/comment", authMiddleware, async (req, res) => {
   const { id } = req.params;
-  const blog = blogsData.find((blog) => blog.id === id);
-
-  if (!blog) {
-    return res.status(404).json({ message: "Blog not found" });
-  }
-
   const { text } = req.body;
 
-  const newComment = {
-    id: crypto.randomUUID(),
-    userId: req.user.id,
-    user: req.user.username,
-    text,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  };
+  if(!text){
+    return res.status(400).json({message : "Comment text is required"})
+  } 
 
-  blog.comment.push(newComment);
+  const updatedBlog = await Blog.findByIdAndUpdate(
+    id , 
+    {
+      $push : {
+        comments : {
+          userId : req.user._id,
+          username : req.user.name,
+          text
+        }
+      }
+    },
+    {
+      new : true
+    }
+  )
 
-  try {
-    await writeFile("./blogsDB.json", JSON.stringify(blogsData, null, 2));
-    return res.status(201).json({ message: "Comment added" });
-  } catch (err) {
-    return res.json({ message: " failed to comment" });
+  if(!updatedBlog){
+    return res.status(404).json({message : "Blog not found"})
   }
+
+  return res.status(201).json({message :  "Comment added" , comments : updatedBlog.comments})
 });
 
 // Blog Delete
 router.delete("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
-  const blogIndex = blogsData.findIndex(
-    (blog) => blog.id === id && blog.userId === req.user.id,
-  ); // 4
+  
+  const deletedBlog = await Blog.findOneAndDelete({
+    _id : id ,
+    userId : req.user._id
+  })
 
-  if (blogIndex === -1) {
-    return res.status(404).json({ message: "Blog not found or unauthorized" });
+  if(!deletedBlog){
+    return res.status(404).json({message : "Blog not found or unauthorized"})
   }
 
-  blogsData.splice(blogIndex, 1);
+  return res.status(200).json({message : "Blog deleted successfully" , blog : deletedBlog})
 
-  try {
-    await writeFile("./blogsDB.json", JSON.stringify(blogsData, null, 2));
-    return res.status(201).json({ message: "Blog deleted" });
-  } catch (err) {
-    return res.json({ message: " Failed to Delete a blog" });
-  }
+  
 });
 
 export default router;
