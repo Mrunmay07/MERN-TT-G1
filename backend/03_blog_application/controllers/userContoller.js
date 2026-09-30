@@ -1,5 +1,7 @@
 import crypto from "node:crypto"
 import User from "../models/User.js";
+import bcrypt from "bcrypt"
+import Session from "../models/Session.js";
 
 export async function registerController(req , res){
   const {name , email , password} = req.body
@@ -11,7 +13,7 @@ export async function registerController(req , res){
   const exitingUser = await User.findOne({email})
 
   // hash a password
-  const hashedPassword = crypto.createHash("sha256").update(password).digest("hex")
+  const hashedPassword = await bcrypt.hash(password ,12 )
 
   if(exitingUser){
     return res.json({message : "User already exists"})
@@ -38,14 +40,20 @@ export async function loginController(req , res){
       return res.status(404).json({message : "Invalid credentials"})
     }
 
-    const recalculatedPasswordHash = crypto.createHash("sha256").update(password).digest("hex")
+    const isPasswordValid = await bcrypt.compare(password , user.password)
 
-    if(user.password !== recalculatedPasswordHash){
-      return res.json("Ivalid credentials")
+    if(!isPasswordValid){
+      return res.json({message : "INvalid credentials"})
     }
 
-    res.cookie("uid", user._id , {
-      signed : true
+    const session = await Session.create({
+      userId : user._id,
+      expiresAt :new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+    })
+
+    res.cookie("sid", session._id , {
+      signed : true,
+      httpOnly : true
     })
 
     return res.status(200).json({message : "User logged in"})
