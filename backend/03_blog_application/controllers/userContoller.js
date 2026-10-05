@@ -46,6 +46,8 @@ export async function loginController(req , res){
       return res.json({message : "INvalid credentials"})
     }
 
+    await Session.deleteMany({userId : user._id})
+
     const session = await Session.create({
       userId : user._id,
       expiresAt :new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
@@ -65,4 +67,10 @@ export function logoutController(req , res){
 }
 
 
+export async function logoutAllController(req , res){
+  await Session.deleteMany({userId : req.user._id})
 
+  res.clearCookie("sid")
+
+  return res.status(201).json({message : "All devices are logged out"})
+}
