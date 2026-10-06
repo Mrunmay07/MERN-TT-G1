@@ -46,7 +46,6 @@ router.post("/request-otp" , async (req , res) => {
     if(!user){
       return res.status(401).json({message : "User not found"})
     }
-
     // check password
     const isPasswordValid = await bcrypt.compare(password , user.password )
 
@@ -109,8 +108,8 @@ router.post("/verify-otp" , async (req , res) => {
     }
 
     // compare otp
-    const isOTPValid = await bcrypt.compare(storedOTP.otpHash , otp)
-    console.log(isOTPValid)
+    const isOTPValid = await bcrypt.compare(otp  ,storedOTP.otpHash)
+
 
     if(!isOTPValid){
       storedOTP.attempts += 1
